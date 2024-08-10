@@ -1,8 +1,10 @@
 
 import { Link } from 'react-router-dom';
-import styles from './barberShop.module.css'
 import { useState } from 'react';
 import { Post } from '../../../../core/service/post.js';
+import { HeaderAccount } from '../../../../components/barber-side/header-account';
+import styles from './barberShop.module.css'
+
 
 export default function BarberShop() {
 
@@ -41,7 +43,7 @@ export default function BarberShop() {
     Post('http://localhost:8080/cutandtrim/barber/register-brshp', newBarberShop)
       .then(jBody => {
         if (typeof jBody.barberShop.id !== 'undefined') {
-          localStorage.setItem('barberShopID',jBody.barberShop.id);
+          localStorage.setItem('barberShopID', jBody.barberShop.id);
           window.location.href = 'http://localhost:3000/barber/service/list';
         }
       })
@@ -53,22 +55,17 @@ export default function BarberShop() {
   }
 
   return (
-    <section className={styles.registerShop_body}>
+    <div className={styles.registerShop_container}>
+      <img className={styles.img} src='/assets/images/account.svg' />
 
-      <div className={styles.header_container}>
-        <div className={styles.back_container}>
-          <Link to={'/barber/account/singup'}>
-            <button className={styles.btn_back}><i className="fi fi-sr-caret-left"></i></button>
-          </Link>
-        </div>
-        <div className={styles.title_container}>
-          <h1>One last more</h1>
-          <p>Enter your barbershop information</p>
-        </div>
+      <div className={styles.header_outside}>
+        <HeaderAccount title={'Barber Shop'} paragraph={'Enter your personal information'} />
       </div>
 
-      <div className={styles.registerShop_container}>
-
+      <div className={styles.registerShop_content}>
+        <div className={styles.header_inside}>
+          <HeaderAccount title={'Barber Shop'} paragraph={'Enter your personal information'} />
+        </div>
         <form className={styles.form_container} onSubmit={handleSubmit}>
           <div className={styles.input_field}>
             <div className={styles.input_body}>
@@ -98,7 +95,6 @@ export default function BarberShop() {
             </div>
 
             <div className={styles.same_place}>
-
               <div className={styles.input_body}>
                 <label>Neighborhood: </label>
                 <div className={styles.input_container}>
@@ -137,12 +133,13 @@ export default function BarberShop() {
           </div>
           <footer className={styles.footer}>
             <button className={styles.btn_continue}>Register</button>
+            <Link to={'/barber/login'}> Login </Link>
           </footer>
 
         </form>
-      </div>
 
-    </section >
+      </div>
+    </div>
   );
 
 }
