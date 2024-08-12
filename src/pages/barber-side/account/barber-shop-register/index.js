@@ -56,7 +56,7 @@ export default function BarberShop() {
 
   return (
     <div className={styles.registerShop_container}>
-      <img className={styles.img} src='/assets/images/account.svg' />
+      <img className={styles.img} src='/assets/images/register.svg' />
 
       <div className={styles.header_outside}>
         <HeaderAccount title={'Barber Shop'} paragraph={'Enter your personal information'} />

@@ -1,13 +1,14 @@
-import Scheduling from './pages/scheduling';
-import Timetable from './pages/timetable';
-import Header from './components/structure/header';
+
 
 import CreateService from './pages/barber-side/service/create';
 import UpdateService from './pages/barber-side/service/update';
 import ListServices from './pages/barber-side/service/list';
+
+import Client from './pages/client-side'
 import Account from './pages/barber-side/account';
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import Service from './pages/barber-side/service';
 import './App.css';
+
 
 
 
@@ -18,10 +19,12 @@ import './App.css';
 
 function App() {
   return (
-    
-    <Account></Account>
-  
 
+    <>
+      <Client></Client>
+      <Account></Account>
+      <Service></Service>
+    </>
   );
 }
 

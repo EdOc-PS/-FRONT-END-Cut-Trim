@@ -30,7 +30,7 @@ export default function SingUp() {
   return (
       <div className={styles.singup_container}>
 
-        <img className={styles.img} src='/assets/images/account.svg' />
+        <img className={styles.img} src='/assets/images/singup.svg' />
 
         <div className={styles.header_outside}>
           <HeaderAccount title={'Register'} paragraph={'Enter your personal information'} />
