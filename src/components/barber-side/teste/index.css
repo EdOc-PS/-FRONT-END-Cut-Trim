@@ -1,0 +1,46 @@
+.card-service{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    border: solid 1px var(--black);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.card-service img{
+    width: 150px;
+    border-radius: 5px;
+}
+
+.service_data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text_container{
+    text-decoration: none;
+    font-size: 18px;
+    width: 150px;
+}
+
+.action_buttons{
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.btn-delete, .btn-edit{
+    padding: 5px;
+    color: white;
+}
+.btn-delete{
+    
+    background-color: #fc544b;
+}
+
+.btn-edit{
+    padding: 5px;
+    background-color: #47c363;
+    
+}
