@@ -37,11 +37,9 @@ export default function ListServices() {
             services.map((service) =>
               <CardService service={{ id: service.id, name: service.name, price: service.price }}></CardService>
             )
-          ) : (<p>You don't have services registered yet</p>)
+          ) : ( <p>You don't have services registered yet </p>)
         }
-        <footer className={styles.footer}>
-          <Link to='../create/' className={styles.btn_continue}>Create a Service</Link>
-        </footer>
+    
       </div>
 
     </section>
