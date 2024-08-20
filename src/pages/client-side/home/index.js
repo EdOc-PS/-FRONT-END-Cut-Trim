@@ -1,20 +1,20 @@
 /* eslint-disable react/react-in-jsx-scope */
 
-import Days from '../../../components/client-side/timetable/days';
+import FieldShop from '../../../components/client-side/home/fieldShop';
 import Search from '../../../components/client-side/home/search';
 import Header from '../../../components/structure/header';
 
-function Scheduling() {
+function Home() {
     return (
       <section className="scheduling">
 
           <Header></Header>   
-          <Days></Days>
-
+          <Search></Search>
+          <FieldShop></FieldShop>
 
       </section>
     );
   }
   
-  export default Scheduling;
+  export default Home;
   

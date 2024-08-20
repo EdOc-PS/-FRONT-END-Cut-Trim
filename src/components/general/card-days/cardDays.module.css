@@ -1,0 +1,10 @@
+.day_container{
+    display: flex; 
+}
+
+.day_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+}
