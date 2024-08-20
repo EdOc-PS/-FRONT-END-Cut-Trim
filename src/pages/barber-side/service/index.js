@@ -1,8 +1,9 @@
+/* eslint-disable react/react-in-jsx-scope */
 import CreateService  from './create';
 import ListServices from './list';
 import MenageService from './manage';
 import UpdateService from './update';
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 

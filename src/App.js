@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 
 
 import CreateService from './pages/barber-side/service/create';

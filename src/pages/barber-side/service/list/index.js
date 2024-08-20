@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Link } from 'react-router-dom';
 import CardService from '../../../../components/general/card-services/barber/index.js';
 import { HeaderAccount } from '../../../../components/barber-side/header-account/';
@@ -39,9 +40,6 @@ export default function ListServices() {
             )
           ) : (<p>You don't have services registered yet</p>)
         }
-        <footer className={styles.footer}>
-          <Link to='../create/' className={styles.btn_continue}>Create a Service</Link>
-        </footer>
       </div>
 
     </section>
