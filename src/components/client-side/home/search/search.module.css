@@ -3,32 +3,37 @@
     flex-direction: column;
     gap: 15px;
     width: 100%;
-    padding:  1rem;
+    padding:  .8rem;
 }
 
 .input_container {
     border-radius: 15px;
-    padding: 12px;
+    padding: 16px;
     width: 100%;
     display: flex;
-    border: 2px solid #E8E8E8;
+    background-color: var(--laranja);
     align-items: center;
     justify-content: space-between;
-    gap: .5rem;
+    gap: 1rem;
+
+        & input {
+            width: 100%;
+            font-size: 16px;
+            border: 0;
+            color: white;
+            background-color: transparent;
+        }
+
+        & i {
+            font-size: 20px;
+            color: white;
+        }
 }
 
-.input_container i {
-    font-size: 20px;
-
-}
-
-.input_container input {
-    width: 100%;
-    font-size: 16px;
-    border: 0;
-    background-color: transparent;
-}
-
-.input_container input:focus-visible {
+ input:focus-visible {
     outline: none;
+}
+input::placeholder{
+    font-weight: 500;
+    color: #ffffff99;
 }

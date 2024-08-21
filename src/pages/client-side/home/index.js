@@ -4,9 +4,11 @@ import FieldShop from '../../../components/client-side/home/fieldShop';
 import Search from '../../../components/client-side/home/search';
 import Header from '../../../components/structure/header';
 
+import styles from './home.module.css'
+
 function Home() {
     return (
-      <section className="scheduling">
+      <section className={styles.home}>
 
           <Header></Header>   
           <Search></Search>

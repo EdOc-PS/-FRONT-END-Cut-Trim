@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
 
 :root{
-
-    --laranja: #F97B22;
+    --laranja: #F69C49;
     --white: #F6F1EE;
     --black: #1C283B;
 
@@ -13,6 +12,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Geologica';
+    color: var(--black);
 }
 
 i{

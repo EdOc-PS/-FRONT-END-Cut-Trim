@@ -4,10 +4,9 @@ export default function Search() {
   return (
 
     <section className={styles.search_container}>
-      <h3>Search</h3>
       <div className={styles.input_container}>
-        <i className="fi fi-sr-search"></i>
-        <input type="txt" />
+        <i className="fi fi-rr-search"></i>
+        <input type="txt" placeholder='Shearch'/>
       </div>
 
 
