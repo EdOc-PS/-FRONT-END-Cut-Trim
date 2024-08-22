@@ -1,5 +1,5 @@
 header{
-    height: 75px;
+    height: 65px;
     width: 100%;
     padding: 0  1rem;
     justify-content: space-between;
@@ -7,6 +7,6 @@ header{
     align-items: center;
     top: 0%;
     z-index: 1;
-    background-color: white;
-    box-shadow: 0 0 15px #0000001c;
+    font-size: 12px;
+
 }

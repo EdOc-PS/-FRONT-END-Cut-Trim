@@ -2,7 +2,8 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './home';
-import Scheduling from './scheduling';
+import Shop from './shop';
+
 
 
 export default function Client() {
@@ -12,8 +13,8 @@ export default function Client() {
       <Routes>
 
         <Route path='client'>
-          <Route path='home' element={<Home />}/>
-          <Route path='scheduling' element={<Scheduling />}/>
+          <Route path='home' element={<Home/>}/>
+          <Route path='shop' element={<Shop/>}/>
         </Route>
 
       </Routes>

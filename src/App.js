@@ -10,15 +10,7 @@ import Account from './pages/barber-side/account';
 import Service from './pages/barber-side/service';
 import './App.css';
 
-
-
-
-
-
-
-
-
-function App() {
+export default function App() {
   return (
 
     <>
@@ -29,4 +21,3 @@ function App() {
   );
 }
 
-export default App;

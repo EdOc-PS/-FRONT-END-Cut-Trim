@@ -1,13 +1,19 @@
 .fieldShop_body{
-    padding: 1rem;
+    padding: 1rem 1.8rem;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-}
-.fieldShop_container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    gap: 1.25rem;
+
+        p{
+            font-size: 14px;
+            color: #1c283ba2;
+        }
+
+        .fieldShop_container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
 }
