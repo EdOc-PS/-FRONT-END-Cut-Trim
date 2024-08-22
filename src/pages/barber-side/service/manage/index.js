@@ -4,6 +4,7 @@ import { Outlet } from 'react-router';
 import CardSelect from '../../../../components/general/card-selectService';
 
 import styles from './menage.module.css';
+import { Link } from 'react-router-dom';
 
 
 export default function MenageService() {
@@ -13,15 +14,17 @@ export default function MenageService() {
       <div className={styles.nav}>
         <div></div>
         <ul>
-          <li><i class="fi fi-sr-ballot"></i></li>
+          
           <li><i class="fi fi-sr-clock-five"></i></li>
+          <li><Link to={'list'}><i class="fi fi-sr-ballot"></i></Link></li>
           <li><i class="fi fi-sr-settings-sliders"></i></li>
+
         </ul>
         <div className='exit'><i class="fi fi-sr-exit-alt"></i></div>
       </div>
       <div className={styles.menage_container}>
 
-        <Outlet/>
+        <Outlet />
 
       </div>
 
