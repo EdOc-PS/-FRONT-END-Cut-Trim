@@ -13,12 +13,14 @@ export default function Service() {
       <Routes>
 
       <Route path='barber'>
-          <Route path='service' >
-            <Route path='create' element={<CreateService />} />
-            <Route path='list' element={<ListServices />} />
-            <Route path='update/:id' element={<UpdateService />} />
-            <Route path='' element={<MenageService />}/>
+          <Route path='service' element={<MenageService />}>
+
+              <Route path='create' element={<CreateService />} />
+              <Route path='list' element={<ListServices />} />
+              <Route path='update/:id' element={<UpdateService />} />
+          
           </Route>
+          
         </Route>
 
       </Routes>
