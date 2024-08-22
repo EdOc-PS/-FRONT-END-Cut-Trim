@@ -11,7 +11,6 @@ function Scheduling() {
           <Header></Header>   
           <Days></Days>
 
-
       </section>
     );
   }
