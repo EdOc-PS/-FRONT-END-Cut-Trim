@@ -28,7 +28,7 @@ export default function ListServices() {
   return (
     <section className={styles.listServices_body}>
       <div className={styles.header_container}>
-        <HeaderAccount title='List Services' paragraph="All Service's from your barber shop"></HeaderAccount>
+        <HeaderAccount title='Your Services' paragraph="All Service's from your barber shop"></HeaderAccount>
       </div>
 
       <div className={styles.listServices_container}>
@@ -40,6 +40,7 @@ export default function ListServices() {
             )
           ) : (<p>You don't have services registered yet</p>)
         }
+        
       </div>
 
     </section>
