@@ -1,0 +1,26 @@
+.days{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    padding: .5rem  1rem;
+    height: 25vh;
+}
+
+.day_container{
+    width: 100%;
+}
+
+.day_container .label p{
+    margin-bottom: 5px;
+    font-size: 18px;
+
+}
+
+.day_itens{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

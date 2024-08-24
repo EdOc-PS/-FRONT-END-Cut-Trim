@@ -1,31 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
 
 :root{
+    --laranja: #F69C49;
+    --white: #F6F1EE;
     --black: #1C283B;
-    --black_two: #223148;
-    --azul: #0063C0;
-    --vermelho: #FF3048;
 
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Oswald';
-  color: var(--black);
-}
-
-p, h3, h1{
-    font-family: 'Roboto';
-}
-
-p{
-    color: var(--black_two);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Geologica';
+    color: var(--black);
 }
 
 i{
     display: grid;
+    color: var(--black);
     place-items: center;
     font-size: 24px;
 }
@@ -33,9 +25,11 @@ i{
 a{
     width: 100%;
     color: var(--black);
+    width: 100%;
     text-decoration: none;
 }
 
 button{
     border: 0;
+    cursor: pointer;
 }

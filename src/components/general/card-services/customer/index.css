@@ -1,0 +1,10 @@
+.card-body img{
+    width: 160px;
+    border-radius: 5px;
+}
+
+.text_container{
+    text-decoration: none;
+    font-size: 14px;
+    width: 100%;
+}

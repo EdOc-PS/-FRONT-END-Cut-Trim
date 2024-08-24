@@ -1,14 +1,15 @@
-import './index.css'
+/* eslint-disable react/react-in-jsx-scope */
+import styles from'./header.module.css'
 
 
 export default function Header() {
-    return (
-      <header className="header">
-        <h2>Cut&Trim</h2>
-        <i class="fi fi-ss-bell"></i>
-      </header>
-    );
-  }
-  
+  return (
+    // eslint-disable-next-line react/react-in-jsx-scope
+    <header className= {styles.header}>
+      <h1>CUT&TRIM</h1>
+      <i className="fi fi-sr-bell"></i>
+    </header>
+  );
+}
 
-  
+

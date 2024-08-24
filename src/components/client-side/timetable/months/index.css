@@ -1,0 +1,47 @@
+.months{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    padding: .5rem  1rem;
+    height: 25vh;
+    margin-top: 75px;
+}
+
+.user_container{
+    width: 100%;
+    font-size: 30px;
+    padding: .5rem 0;
+}
+
+
+.month_container{
+    width: 100%;
+}
+.label p{
+    margin-bottom: 5px;
+    font-size: 14px;
+
+}
+.month_content{
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--black);
+    height: 70px;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+
+}
+.month_content p, .month_content i{
+    color: #FFF;
+    font-weight: 700;
+}
+
+
+.barber_text_container p{
+    font-family: 'Oswald';
+}

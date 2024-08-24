@@ -1,0 +1,45 @@
+
+.card_body {
+    width: 100%;
+    padding: .8rem 0;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    height: 100px;
+
+
+        img{
+            width: 75px;
+            height: 75px;
+            border-radius: 25px;
+            object-fit: cover;
+
+     
+        }
+
+        .text_container{
+            padding: .3rem 1rem;
+            font-size: 14px;
+            height: 100%;
+            width: 70%;
+            display: flex;
+            justify-content: start;
+        }
+
+        .btn_container{
+            height: 100%;
+            width: 30%;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+
+                button{
+                    color: white;
+                    padding: 8px 10px;
+                    font-size: 12px;
+                    border-radius: 10px;
+                    background-color: var(--black)
+                }
+        }
+  
+}

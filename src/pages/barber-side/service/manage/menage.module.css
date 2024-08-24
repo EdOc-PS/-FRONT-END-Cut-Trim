@@ -1,0 +1,43 @@
+section.menage_body {
+    height: 100dvh;
+    display: flex;
+}
+
+.nav{
+    height: 100%;
+    width: 95px;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 0.5rem;
+        a{
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        i{
+            font-size: 26px;
+            color: white;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 46px;
+
+        }
+        li{
+            padding: 1.5rem 1rem;
+            border-radius: 15px;
+            transition: .2s ease;
+            cursor: pointer;
+        }
+        li:hover{
+            background-color: #2f3f58;
+        }
+}
+.menage_container{
+    width: 100%;
+}
+

@@ -1,0 +1,39 @@
+
+.card_body {
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #E4E9F3;
+    border-radius: 25px;
+    padding: 1rem;
+}
+
+@media only screen and (min-width: 926px) {
+    .card_body {
+        cursor: pointer;
+        width:200px;
+        align-items: start;
+        justify-content: space-between;  
+        transition: all .3s ease;  
+    }
+
+    .card_body:hover{
+        border: 1px solid var(--laranja);
+        transform: scale(1.05);
+        box-shadow: 0 0 15px #00000025;
+
+            i{
+                color: var(--laranja);
+            }
+    }
+
+    i{
+        font-size: 40px;
+        transition: all .3s ease;  
+    }
+    h1{
+        font-size: 22px;
+    }
+   
+}

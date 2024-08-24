@@ -1,0 +1,76 @@
+.wellcome_container,
+.wellcome_content{
+    display: flex;
+    flex-direction: column;
+}
+
+.wellcome_container{
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.img {
+    width: 360px;
+}
+
+.wellcome_content {
+    width: 100%;
+    gap: 25px;
+}
+
+.text_container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.buttons_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    button {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 15px;
+        font-size: 18px;
+    }
+
+    .btn_account {
+        background-color: var(--laranja);
+        color: white;
+    }
+    
+    .btn_login_account {
+        background-color: var(--black);
+        color: #F6F1EE;
+    }
+}
+
+
+
+@media only screen and (min-width: 926px) {
+    .img {
+        width: 500px;
+    }
+
+    .wellcome_container{
+        width: 50%;
+    }
+    .wellcome_content{
+        width: 70%;
+    }
+    .text_container{
+        text-align: center;
+        align-items: center;
+
+            h1{
+                font-size: 40px;
+            }
+    }
+}

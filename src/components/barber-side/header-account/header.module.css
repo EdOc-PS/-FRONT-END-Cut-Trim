@@ -1,0 +1,39 @@
+.header_container {
+    height: 100%;
+    align-items: start;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+
+    & h1 {
+        font-size: 56px;
+        text-transform: uppercase;
+        text-align: start;
+        color: white;
+
+    }
+
+    & p {
+        font-size: 18px;
+        color: white;
+
+    }
+}
+
+@media only screen and (min-width: 926px) {
+    .header_container {
+        width: 100%;
+        padding: 0;
+
+        & h1 {
+            font-size: 64px;
+            text-align: start;
+            color: var(--black);
+
+        }
+
+        & p {
+            font-size: 24px;
+            color: var(--black);
+        }
+    }
+}

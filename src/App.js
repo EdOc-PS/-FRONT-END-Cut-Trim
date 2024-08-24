@@ -1,49 +1,23 @@
-import Scheduling from './pages/scheduling';
-import Timetable from './pages/timetable';
-import Header from './components/structure/header';
-import SingUp from './pages/barber-side/account/singup';
-import CreateService from './pages/barber-side/service/create';
+/* eslint-disable react/react-in-jsx-scope */
 
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+
+import CreateService from './pages/barber-side/service/create';
+import UpdateService from './pages/barber-side/service/update';
+import ListServices from './pages/barber-side/service/list';
+
+import Client from './pages/client-side'
+import Account from './pages/barber-side/account';
+import Service from './pages/barber-side/service';
 import './App.css';
 
-
-
-
-
-function Body(){
-  return (
-    <main className="">
-      <Header></Header>
-      <Outlet/>
-    </main>
-  );
-
-}  
-
-
-function App() {
+export default function App() {
   return (
 
-    <BrowserRouter>
-    <Routes>
-      <Route path='client' element ={<Body/>}>
-        <Route path='scheduling' element ={<Scheduling/>} />
-        <Route path='timetable' element ={<Timetable/>} />
-      </Route>
-
-      <Route path='barber'>
-        <Route path='account/singup' element ={<SingUp/>} />
-        <Route path='service'>
-          <Route path='create'element={<CreateService/>}>
-        </Route>
-      </Route>
-
-      </Route>
-    </Routes>
-    </BrowserRouter>
-
+    <>
+      <Client></Client>
+      <Account></Account>
+      <Service></Service>
+    </>
   );
 }
 
-export default App;
