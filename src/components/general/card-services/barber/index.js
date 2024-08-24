@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Link } from 'react-router-dom';
 import './index.css'
 import { Delete } from '../../../../core/service/delete';

@@ -1,17 +1,18 @@
 
 .card_body {
     width: 100%;
-    padding: .8rem 0;
-    border-radius: 25px;
+    padding: 1rem;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     height: 100px;
-
+    background-color: white;
+    box-shadow: 0 0 10px #EAEBEC;
 
         img{
             width: 75px;
             height: 75px;
-            border-radius: 25px;
+            border-radius: 20px;
             object-fit: cover;
 
      

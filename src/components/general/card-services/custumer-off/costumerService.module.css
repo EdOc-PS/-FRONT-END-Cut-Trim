@@ -1,0 +1,27 @@
+.card_body {
+    display: flex;
+    padding: 1rem;
+    height: 90px;
+    align-items: center;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px #EAEBEC;
+    gap: 16px;
+
+    i {
+        font-size: 26px;
+    }
+}
+
+.text_container {
+    text-decoration: none;
+    font-size: 14px;
+    width: 100%;
+}
+
+.price_container {
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}

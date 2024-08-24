@@ -1,6 +1,7 @@
 section.menage_body {
     height: 100dvh;
     display: flex;
+    background-color: #F6F6F6;
 }
 
 .nav{
@@ -18,7 +19,7 @@ section.menage_body {
         }
 
         i{
-            font-size: 26px;
+            font-size: 24px;
             color: white;
         }
         ul{

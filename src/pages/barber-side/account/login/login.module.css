@@ -4,6 +4,7 @@
     width: 100%;
     justify-content: space-between;
     flex-direction: column;
+
 }
 
 .form_container,
@@ -16,7 +17,7 @@
 }
 
 .login_content {
-    background-color: white;
+
     padding: 1.5rem;
     border-radius: 20px 20px 0 0;
     gap: 30px;
@@ -41,6 +42,7 @@
 }
 
 .form_container {
+
     justify-content: center;
     gap: 25px;
 }
@@ -128,7 +130,7 @@
 
 
     .login_content {
-        border-radius: 0;
+      
         background-color: transparent;
         width: 650px;
         padding: 0;
@@ -145,6 +147,7 @@
 
     .form_container {
         gap: 40px;
+
     }
 
     .input_body {
