@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -59,26 +60,26 @@ export default function BarberShop() {
       <img className={styles.img} src='/assets/images/register.svg' />
 
       <div className={styles.header_outside}>
-        <HeaderAccount title={'Barber Shop'} paragraph={'Enter your personal information'} />
+        <HeaderAccount title={'Barbearia'} paragraph={'Insira as informações da barbearia'} />
       </div>
 
       <div className={styles.registerShop_content}>
         <div className={styles.header_inside}>
-          <HeaderAccount title={'Barber Shop'} paragraph={'Enter your personal information'} />
+          <HeaderAccount title={'Barbearia'} paragraph={'Insira as informações da barbearia'} />
         </div>
         <form className={styles.form_container} onSubmit={handleSubmit}>
           <div className={styles.input_field}>
             <div className={styles.input_body}>
-              <label>Name:</label>
+              <label>Nome da Barbearia:</label>
               <div className={styles.input_container}>
-                <i className="fi fi-sr-employee-man-alt"></i>
+                <i className="fi fi-sr-barber-pole"></i>
                 <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
               </div>
             </div>
 
             <div className={styles.same_place}>
               <div className={styles.input_body}>
-                <label>City</label>
+                <label>Cidade</label>
                 <div className={styles.input_container}>
                   <i className="fi fi-sr-europe-flag"></i>
                   <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
@@ -96,14 +97,14 @@ export default function BarberShop() {
 
             <div className={styles.same_place}>
               <div className={styles.input_body}>
-                <label>Neighborhood: </label>
+                <label>Bairro: </label>
                 <div className={styles.input_container}>
                   <i className="fi fi-sr-house-chimney-blank"></i>
                   <input type="text" value={neighborhood} onChange={(e) => setNeighborhood(e.target.value)} />
                 </div>
               </div>
               <div className={styles.input_body}>
-                <label>State</label>
+                <label>Estado:</label>
                 <div className={styles.input_container}>
                   <i className="fi fi-sr-europe-flag"></i>
                   <input type="text" value={state} onChange={(e) => setState(e.target.value)} />
@@ -114,7 +115,7 @@ export default function BarberShop() {
 
             <div className={styles.same_place}>
               <div className={styles.input_body}>
-                <label>Street</label>
+                <label>Rua:</label>
                 <div className={styles.input_container}>
                   <i className="fi fi-sr-city"></i>
                   <input type="text" value={street} onChange={(e) => setStreet(e.target.value)} />
@@ -122,7 +123,7 @@ export default function BarberShop() {
               </div>
 
               <div className={styles.input_body}>
-                <label>Number:</label>
+                <label>Numero:</label>
                 <div className={styles.input_container}>
                   <i className="fi fi-sr-house-chimney-blank"></i>
                   <input type="text" value={number} onChange={(e) => setNumber(e.target.value)} />

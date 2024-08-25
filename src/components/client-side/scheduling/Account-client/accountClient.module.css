@@ -1,0 +1,106 @@
+.background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0, 0.7);
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.form_container,
+.schedulingModal {
+    justify-content: center;
+    display: flex;
+}
+
+.schedulingModal {
+    position: relative;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 20px;
+}
+
+
+.same_place {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+        h1 {
+            width: 100%;
+            font-size: 20px;
+        }
+        p{
+            justify-content: start;
+            color: #1c283ba2;
+        }
+        .btn_close {
+            height: 30px;
+            background-color: white;
+            i{
+                font-size: 30px;
+            }
+        }
+}
+
+.form_container {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.input_body {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input_container {
+    border-radius: 15px;
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    background-color: #d5ddeca6;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+
+    i {
+        font-size: 20px;
+    }
+
+    input {
+        width: 100%;
+        font-size: 16px;
+        border: 0;
+        background-color: transparent;
+    }
+}
+
+.input_container input:focus-visible {
+    outline: none;
+}
+
+.btn_continue {
+    width: 100%;
+    background-color: var(--laranja);
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 1rem;
+    color: #FFF;
+    margin-top: 10px;
+}
+
+
+

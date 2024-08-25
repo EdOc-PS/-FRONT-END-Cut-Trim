@@ -21,7 +21,7 @@ export default function SingUp() {
       sessionStorage.setItem("barberName", name);
       sessionStorage.setItem("barberEmail", email);
       sessionStorage.setItem("barberPassword", password);
-      window.location.href = "http://localhost:3000/barber/barber-shop";
+      window.location.href = "http://localhost:3000/barber/register-shop";
     } else {
       console.log('Senhas inválidas!');
     }
@@ -34,18 +34,18 @@ export default function SingUp() {
         <img className={styles.img} src='/assets/images/singup.svg' />
 
         <div className={styles.header_outside}>
-          <HeaderAccount title={'Register'} paragraph={'Enter your personal information'} />
+          <HeaderAccount title={'Registre-se'} paragraph={'Insira suas informações pessoais'} />
         </div>
 
         <div className={styles.singup_content}>
           <div className={styles.header_inside}>
-            <HeaderAccount title={'Register'} paragraph={'Enter your personal information'} />
+            <HeaderAccount title={'Registre-se'} paragraph={'Insira suas informações pessoais'} />
           </div>
 
           <form className={styles.form_container} onSubmit={handleSubmit}>
             <div className={styles.input_field}>
               <div className={styles.input_body}>
-                <label>Name:</label>
+                <label>Nome:</label>
                 <div className={styles.input_container}>
                   <i className="fi fi-sr-employee-man-alt"></i>
                   <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
@@ -62,7 +62,7 @@ export default function SingUp() {
 
               <div className={styles.same_place}>
                 <div className={styles.input_body}>
-                  <label>Password:</label>
+                  <label>Senha:</label>
                   <div className={styles.input_container}>
                     <i className="fi fi-sr-shield"></i>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
@@ -71,7 +71,7 @@ export default function SingUp() {
                 </div>
 
                 <div className={styles.input_body}>
-                  <label>Repeat password:</label>
+                  <label>Repita a Senha:</label>
                   <div className={styles.input_container}>
                     <i className="fi fi-sr-shield"></i>
                     <input type="password" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} />
@@ -83,7 +83,7 @@ export default function SingUp() {
             </div>
 
             <footer className={styles.footer}>
-              <button className={styles.btn_continue}>Continue</button>
+              <button className={styles.btn_continue}>Continuar</button>
               <Link to={'/barber/login'}> Login</Link>
             </footer>
           </form>

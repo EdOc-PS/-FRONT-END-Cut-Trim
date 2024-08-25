@@ -7,7 +7,7 @@ export default function FieldService() {
   return (
 
     <section className={styles.fieldService_body}>
-        <p>Services: </p>
+        <p>Serviços: </p>
         <div className={styles.fieldService_container}> 
             <CardService></CardService>
             <CardService></CardService>

@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useState } from 'react';
 import { Post } from '../../../../core/service/post';
 import { HeaderAccount } from '../../../../components/barber-side/header-account';
@@ -37,12 +38,12 @@ export default function Login() {
       <img className={styles.img} src='/assets/images/account.svg' />
 
       <div className={styles.header_outside}>
-        <HeaderAccount title={'Login'} paragraph={'Enter your personal information'} />
+        <HeaderAccount title={'Login'} paragraph={'Bem-vindo de volta!'} />
       </div>
 
       <div className={styles.login_content}>
         <div className={styles.header_inside}>
-          <HeaderAccount title={'Login'} paragraph={'Enter your personal information'} />
+          <HeaderAccount title={'Login'} paragraph={'Bem-vindo de volta!'} />
         </div>
 
         <form className={styles.form_container} onClick={handleSubmit}>
@@ -56,7 +57,7 @@ export default function Login() {
             </div>
 
             <div className={styles.input_body}>
-              <label>Password:</label>
+              <label>Senha:</label>
               <div className={styles.input_container}>
                 <i className="fi fi-sr-shield"></i>
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
@@ -65,8 +66,8 @@ export default function Login() {
             </div>
           </div>
           <footer className={styles.footer}>
-            <button className={styles.btn_continue}>Continue</button>
-            <Link to={'/barber/singup'}> Register</Link>
+            <button className={styles.btn_continue}>Continuar</button>
+            <Link to={'/barber/singup'}> Registre</Link>
           </footer>
         </form>
 

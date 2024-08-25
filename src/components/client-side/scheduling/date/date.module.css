@@ -1,0 +1,55 @@
+.date_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    padding: 1.25rem;
+}
+
+
+.mouth_container {
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+    border-radius: 15px;
+    background-color: var(--laranja);
+
+    p {
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: white;
+    }
+}
+
+.days_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .day_itens {
+        width: 100%;
+        overflow-x: scroll;
+        display: flex;
+        gap: 10px;
+    }
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+}
+
+.times_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.title{
+    font-size: 16px;
+    color: #1c283ba2;
+}

@@ -2,8 +2,8 @@
     padding: 1rem 1rem;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-
+    gap: 15px;
+    margin-top: 5px;
         p{
             font-size: 14px;
             color: #1c283ba2;

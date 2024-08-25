@@ -8,6 +8,8 @@
     height: 100px;
     background-color: white;
     box-shadow: 0 0 10px #EAEBEC;
+    border: 1px solid #d5ddeca6;
+    
 
         img{
             width: 75px;

@@ -1,16 +1,15 @@
 /* eslint-disable react/react-in-jsx-scope */
 
-import Days from '../../../components/client-side/timetable/days';
-import Search from '../../../components/client-side/home/search';
-import Header from '../../../components/structure/header';
 
+import Days from '../../../components/client-side/scheduling/date';
+import HeaderBack from '../../../components/structure/header_back';
+import styles from './scheduling.module.css'
 function Scheduling() {
     return (
-      <section className="scheduling">
+      <section className={styles.scheduling}>
 
-          <Header></Header>   
-          <Days></Days>
-
+          <HeaderBack title={'Agendamento'} link={'../shop'}/>  
+          <Days />
       </section>
     );
   }

@@ -1,0 +1,27 @@
+.day_time{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.time_container {
+        background-color: white;
+        border: 1px solid #d5ddeca6;
+        box-shadow: 0 0 10px #EAEBEC;
+        padding: 16px;
+        border-radius: 15px;
+        width: 48%;
+
+        p{
+           
+            justify-content: center;
+            text-align: center;
+            display: flex;
+            width: 100%;
+    
+      
+        }
+}

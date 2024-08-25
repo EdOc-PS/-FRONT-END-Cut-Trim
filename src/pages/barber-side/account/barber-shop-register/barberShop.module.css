@@ -144,9 +144,6 @@ input:focus-visible {
         align-items: center;
         flex-direction: row;
         width: 100%;
-        background-color: white !important;
-        border-radius: 20px;
-        box-shadow: 0 5px 10px #EAEBEC;
     }
 
     .img {
