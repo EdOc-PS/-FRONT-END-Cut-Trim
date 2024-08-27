@@ -21,7 +21,7 @@ export default function BarberShop() {
     event.preventDefault();
 
     var newBarberShop = {
-      barber: {
+      owner: {
         name: sessionStorage.getItem("barberName"),
         email: sessionStorage.getItem("barberEmail"),
         password: sessionStorage.getItem("barberPassword"),
@@ -41,7 +41,7 @@ export default function BarberShop() {
       }
     }
 
-    Post('http://localhost:8080/cutandtrim/barber/register-brshp', newBarberShop)
+    Post('http://localhost:8080/cutandtrim/owner/register', newBarberShop)
       .then(jBody => {
         if (typeof jBody.barberShop.id !== 'undefined') {
           localStorage.setItem('barberShopID', jBody.barberShop.id);
