@@ -11,7 +11,7 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const loginBarber = {
+  const loginOwner = {
     email: email,
     password: password,
   }
@@ -19,11 +19,11 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    Post('http://localhost:8080/cutandtrim/signup', loginBarber)
+    Post('http://localhost:8080/cutandtrim/owner-signup', loginOwner)
       .then(jBody => {
-        console.log(jBody)
-        if (jBody.barberShopID) {
-          localStorage.setItem("barberShopID", jBody.barberShopID);
+        console.log(jBody.id)
+        if (jBody.id) {
+          localStorage.setItem('barberShopID', jBody.id);
           window.location.href = 'http://localhost:3000/barber/service/list';
         }
       }).catch(error => {
@@ -46,7 +46,7 @@ export default function Login() {
           <HeaderAccount title={'Login'} paragraph={'Bem-vindo de volta!'} />
         </div>
 
-        <form className={styles.form_container} onClick={handleSubmit}>
+        <form className={styles.form_container} onSubmit={handleSubmit}>
           <div className={styles.input_field}>
             <div className={styles.input_body}>
               <label>Email:</label>
