@@ -15,9 +15,9 @@ export default function MenageService() {
         <div></div>
         <ul>
           
-          <li><i class="fi fi-sr-clock-five"></i></li>
-          <li><Link to={'list'}><i class="fi fi-sr-ballot"></i></Link></li>
-          <li><i class="fi fi-sr-settings-sliders"></i></li>
+          <li><i className="fi fi-sr-clock-five"></i></li>
+          <li><Link to={'list'}><i className="fi fi-sr-ballot"></i></Link></li>
+          <li><Link to={'create'}><i className="fi fi-sr-pen-clip"></i></Link></li>
 
         </ul>
         <div className='exit'><i class="fi fi-sr-exit-alt"></i></div>

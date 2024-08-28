@@ -51,8 +51,6 @@ export default function BarberShop() {
       .catch(error => {
         console.error('Erro:', error);
       });
-
-
   }
 
   return (

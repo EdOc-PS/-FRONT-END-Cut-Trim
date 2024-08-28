@@ -1,14 +1,26 @@
 import styles from'./updateService.module.css'
 import { Get } from '../../../../core/service/get.js';
 import { Put } from '../../../../core/service/put.js';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 export default function UpdateService() {
   const { id } = useParams();
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
-  const [durationTime, setDurationTime] = useState('');
+
+  useEffect(() => {
+    const getServices = async () => {
+      Get('http://localhost:8080/cutandtrim/service/find?id=' + id)
+        .then(jBody => {
+          setName(jBody.name);
+          setPrice(jBody.price)
+        })
+        .catch(error => { console.error('Error:', error); });
+    }
+
+    getServices();
+  }, []);
 
   const handleSubmit = (e) =>{ 
     e.preventDefault();
@@ -17,7 +29,7 @@ export default function UpdateService() {
       id: id,
       name: name,
       price: parseFloat(price),
-      duration: parseFloat(durationTime),
+      duration: 1,
       status: 'A'
     }
 
@@ -48,9 +60,6 @@ export default function UpdateService() {
             </div>
           </div>
 
-
-          <div className={styles.same_place}>
-
             <div className={styles.input_body}>
               <label>Preço:</label>
               <div className={styles.input_container}>
@@ -58,21 +67,6 @@ export default function UpdateService() {
                 <input type="text" name="" id="" value={price} onChange={ (e) => setPrice(e.target.value ) }/>
               </div>
             </div>
-
-            <div className={styles.input_body}>
-              <label>Tempo de duração:</label>
-              <div className={styles.input_container}>
-                <i className="fi fi-sr-clock-three"></i>
-                <select className={styles.select_service_time} value={durationTime} onChange={ (e) => setDurationTime(e.target.value ) }>
-                  <option value="" disabled selected>Tempo de duração</option>
-                  <option className={styles.option_time} value="0.5">30 minutos</option>
-                  <option className={styles.option_time} value="1">1 hora</option>
-                  <option className={styles.option_time} value="1.5">1 hora e 30 minutos</option>
-                  <option className={styles.option_time} value="2">2 horas</option>
-                </select>
-              </div>
-            </div>
-          </div>
           <footer className={styles.footer}>
             <button className={styles.btn_continue}>Update</button>
           </footer>

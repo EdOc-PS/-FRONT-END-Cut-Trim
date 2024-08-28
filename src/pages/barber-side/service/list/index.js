@@ -30,19 +30,17 @@ export default function ListServices() {
       <div className={styles.header_container}>
         <HeaderAccount title='Your Services' paragraph="All Service's from your barber shop"></HeaderAccount>
       </div>
-
       <div className={styles.listServices_container}>
-
+      
         {
           services && services.length > 0 ? (
             services.map((service) =>
-              <CardService service={{ id: service.id, name: service.name, price: service.price }}></CardService>
+              <CardService service={{ id: service.id, name: service.name, price: service.price.toFixed(2) }}></CardService>
             )
           ) : (<p>You don't have services registered yet</p>)
         }
         
       </div>
-
     </section>
   );
 }
