@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Link } from 'react-router-dom';
 import CardService from '../../../../components/general/card-services/barber/index.js';
-import { HeaderAccount } from '../../../../components/barber-side/header-account/';
+import { HeaderAccount } from '../../../../components/barber-side/header-account/index.js';
 import { Get } from '../../../../core/service/get.js';
 import styles from './listServices.module.css';
 import { useState, useEffect } from 'react';

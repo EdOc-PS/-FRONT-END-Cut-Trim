@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
-import SingUp from '../../pages/barber-side/account/singup';
-import Login from '../../pages/barber-side/account/login';
-import BarberShop from '../../pages/barber-side/account/barber-shop-register';
-import CreateService from '../../pages/barber-side/service/create';
-import ListServices from '../../pages/barber-side/service/list';
+import SingUp from '../../pages/owner-side/account/singup';
+import Login from '../../pages/owner-side/account/login';
+import BarberShop from '../../pages/owner-side/account/barber-shop-register';
+import CreateService from '../../pages/owner-side/service/create';
+import ListServices from '../../pages/owner-side/service/list';
 
 
 export default function RouteBarber() {

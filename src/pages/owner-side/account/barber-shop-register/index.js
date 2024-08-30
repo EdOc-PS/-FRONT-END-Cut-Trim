@@ -3,7 +3,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Post } from '../../../../core/service/post.js';
-import { HeaderAccount } from '../../../../components/barber-side/header-account';
+import { HeaderAccount } from '../../../../components/owner-side/header-account';
 import styles from './barberShop.module.css'
 
 

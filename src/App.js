@@ -1,13 +1,13 @@
 /* eslint-disable react/react-in-jsx-scope */
 
 
-import CreateService from './pages/barber-side/service/create';
-import UpdateService from './pages/barber-side/service/update';
-import ListServices from './pages/barber-side/service/list';
+import CreateService from './pages/owner-side/service/create';
+import UpdateService from './pages/owner-side/service/update';
+import ListServices from './pages/owner-side/service/list';
 
 import Client from './pages/client-side'
-import Account from './pages/barber-side/account';
-import Service from './pages/barber-side/service';
+import Account from './pages/owner-side/account';
+import Service from './pages/owner-side/service';
 import './App.css';
 
 export default function App() {
