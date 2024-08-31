@@ -1,9 +1,15 @@
 .listServices_body{
     height: 100%;
-    padding: 2rem;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .listServices_container{
+   display: flex;
+   gap: 15px;
+   flex-wrap: wrap;
+   padding: 3rem;
    width: 100%;
 }

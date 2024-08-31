@@ -93,7 +93,11 @@ input:focus-visible {
         width: 50%;
     }
 }
-
+.same_place:nth-child(1) {
+    .input_body:first-child {
+        width: 80%;
+    }
+}
 .same_place:nth-child(2) {
     .input_body:first-child {
         width: 65%;
@@ -148,8 +152,7 @@ input:focus-visible {
 
     .img {
         display: block;
-        min-width: 400px;
-        max-width: 550px;
+        width: 28vw;
     }
 
 
@@ -181,7 +184,7 @@ input:focus-visible {
         }
 
         .input_container {
-            padding: 18px;
+            padding: 16px;
             border: 0px;
 
             i {
@@ -191,7 +194,6 @@ input:focus-visible {
             input {
                 width: 100%;
                 font-size: 18px;
-                height: 20px;
                 background-color: transparent;
             }
         }

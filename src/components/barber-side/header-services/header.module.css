@@ -1,0 +1,44 @@
+.header_container {
+    height: 100%;
+    align-items: start;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+
+
+    & h1 {
+        font-size: 56px;
+        text-transform: uppercase;
+        text-align: start;
+        color: white;
+
+    }
+
+    & p {
+        font-size: 18px;
+        color: white;
+
+    }
+}
+
+@media only screen and (min-width: 926px) {
+    .header_container {
+        width: 100%;
+        padding: 1.5rem 3rem;
+        background-color: white;
+        height: 129px;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 5px 10px #EAEBEC;
+
+        & h1 {
+            font-size: 45px;
+            text-align: start;
+            color: var(--black);
+
+        }
+
+        & p {
+            font-size: 20px;
+            color: #1c283ba2;
+        }
+    }
+}

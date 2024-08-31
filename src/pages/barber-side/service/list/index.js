@@ -1,10 +1,10 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable react/react-in-jsx-scope */
-import { Link } from 'react-router-dom';
 import CardService from '../../../../components/general/card-services/barber/index.js';
-import { HeaderAccount } from '../../../../components/barber-side/header-account/';
 import { Get } from '../../../../core/service/get.js';
 import styles from './listServices.module.css';
 import { useState, useEffect } from 'react';
+import { HeaderService } from '../../../../components/barber-side/header-services/index.js';
 
 
 export default function ListServices() {
@@ -27,15 +27,16 @@ export default function ListServices() {
 
   return (
     <section className={styles.listServices_body}>
+
       <div className={styles.header_container}>
-        <HeaderAccount title='Your Services' paragraph="All Service's from your barber shop"></HeaderAccount>
+        <HeaderService title='Seus Serviços' paragraph="Encontre aqui todos os seus serviços disponiveis"/>
       </div>
+
       <div className={styles.listServices_container}>
-      
         {
           services && services.length > 0 ? (
             services.map((service) =>
-              <CardService service={{ id: service.id, name: service.name, price: service.price.toFixed(2) }}></CardService>
+              <CardService service={{ id: service.id, name: service.name, price: service.price.toFixed(2) }}/>
             )
           ) : (<p>You don't have services registered yet</p>)
         }

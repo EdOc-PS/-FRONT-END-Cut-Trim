@@ -1,8 +1,10 @@
+/* eslint-disable react/react-in-jsx-scope */
 
 import styles from './createService.module.css'
 import { Post } from '../../../../core/service/post.js';
 import { useState } from 'react';
 import { HeaderAccount } from '../../../../components/barber-side/header-account/index.js';
+import { HeaderService } from '../../../../components/barber-side/header-services/index.js';
 
 export default function CreateService() {
   const [name, setName] = useState('');
@@ -28,9 +30,10 @@ export default function CreateService() {
 
   return (
     <div className={styles.createService_body}>
-       <HeaderAccount title={'Login'} paragraph={'Bem-vindo de volta!'} />
-      <div className={styles.createService_container}>
 
+       <HeaderService title={'Criar Serviços'} paragraph={'Apresente aos seus clientes os melhores serviços!'} />
+
+      <div className={styles.createService_container}>
         <form className={styles.form_container} onSubmit={handleSubmit}>
 
           <div className={styles.input_body}>

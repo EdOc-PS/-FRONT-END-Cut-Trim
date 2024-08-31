@@ -1,22 +1,20 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Link } from 'react-router-dom';
-import './index.css'
+import styles from './barberService.module.css'
 import { Delete } from '../../../../core/service/delete';
 
 export default function CardService(props) {
   return (
-      <div className='card-service'>
-        <img src='https://blog.oceane.com.br/wp-content/uploads/2024/03/destaque-corte-americano.jpg'/>
-
-      <div className='service_data'>
-        <div className='text_container'>
+      <div className={styles.card_service}>
+      <div className={styles.service_data}>
+        <div className={styles.text_container}>
           <h3>{props.service.name}</h3>
           <p>R$ {props.service.price}</p>
         </div>
-        <div className='action_buttons'>
-          <button className='btn-delete' onClick={() => deleteService(props.service.id)}>Deletar</button>
+        <div className={styles.action_buttons}>
+          <button className={styles.btn} onClick={() => deleteService(props.service.id)}>Deletar</button>
           <Link to={'../../../../barber/service/update/'+ props.service.id}>
-              <button className='btn-edit'>Editar</button>
+              <button className={styles.btn}>Editar</button>
           </Link>
         </div>
       </div>

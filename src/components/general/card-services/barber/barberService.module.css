@@ -1,0 +1,56 @@
+
+
+.card_service{
+    cursor: pointer;
+    width: 350px;
+    padding: 1rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 10px #EAEBEC;
+    border: 1px solid #d5ddeca6;
+
+    a{
+        width: initial;
+    }
+}
+
+
+.service_data{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.text_container{
+        h3{
+            text-transform: capitalize;
+            font-size: 18px;
+        }
+        p{
+            font-size: 14px; 
+        }
+}
+
+.action_buttons{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    gap: 10px;
+}
+
+.btn{
+    padding: 7px 10px;
+    border-radius: 10px;
+    color: var(--laranja);
+    background-color: transparent;
+    transition: .2s ease;
+
+}
+.btn:hover{
+    background-color: var(--laranja);
+    color: #ffffffb4;
+}
+

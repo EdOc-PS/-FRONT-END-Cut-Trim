@@ -1,8 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 
 import { Outlet } from 'react-router';
-import CardSelect from '../../../../components/general/card-selectService';
-
 import styles from './menage.module.css';
 import { Link } from 'react-router-dom';
 

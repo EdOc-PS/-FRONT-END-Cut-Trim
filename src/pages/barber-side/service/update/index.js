@@ -1,8 +1,10 @@
+/* eslint-disable react/react-in-jsx-scope */
 import styles from'./updateService.module.css'
 import { Get } from '../../../../core/service/get.js';
 import { Put } from '../../../../core/service/put.js';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { HeaderService } from '../../../../components/barber-side/header-services/index.js';
 
 export default function UpdateService() {
   const { id } = useParams();
@@ -41,19 +43,15 @@ export default function UpdateService() {
    }
 
   return (
-    <section className={styles.updateService_body}>
+    <div className={styles.updateService_body}>
 
-      <div className={styles.header_container}>
-        <div className={styles.title_container}>
-          <h1>Update Service</h1>
-          <p>Enter your barbershop information</p>
-        </div>
-      </div>
-
+      <HeaderService title={'Atualizar Serviços'} paragraph={'Deixe seu serviço o mais atualizado para seus clientes!'}/>
+    
       <div className={styles.updateService_container}>
         <form className={styles.form_container} onSubmit={ handleSubmit }>
+
           <div className={styles.input_body}>
-            <label>Name:</label>
+            <label>Nome:</label>
             <div className={styles.input_container}>
               <i className="fi fi-ss-barber-shop"></i>
               <input type="text" name="" id="" value={name} onChange={ (e) => setName(e.target.value ) }/>
@@ -67,12 +65,12 @@ export default function UpdateService() {
                 <input type="text" name="" id="" value={price} onChange={ (e) => setPrice(e.target.value ) }/>
               </div>
             </div>
-          <footer className={styles.footer}>
-            <button className={styles.btn_continue}>Update</button>
-          </footer>
+        
+            <button className={styles.btn_continue}>Atualizar</button>
+
         </form> 
       </div>
-    </section >
+    </div >
   );
 }
 

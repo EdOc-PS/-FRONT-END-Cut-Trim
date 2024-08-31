@@ -80,7 +80,7 @@ export default function BarberShop() {
               <div className={styles.input_body}>
                 <label>Imagem:</label>
                 <div className={styles.input_container}>
-                  <i className="fi fi-sr-barber-pole"></i>
+                  <i className="fi fi-sr-resize"></i>
                   <input type="image" />
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function BarberShop() {
 
             <div className={styles.same_place}>
               <div className={styles.input_body}>
-                <label>Cidade</label>
+                <label>Cidade: </label>
                 <div className={styles.input_container}>
                   <i className="fi fi-sr-europe-flag"></i>
                   <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
