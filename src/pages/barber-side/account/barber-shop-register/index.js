@@ -8,8 +8,13 @@ import styles from './barberShop.module.css'
 
 
 export default function BarberShop() {
-
+  const times = setTimes();
+  const lunchTimes = setLunchTimes();
   const [name, setName] = useState('');
+  const [openingTime, setOpeningTime] = useState(7);
+  const [closingTime, setClosingTime] = useState(19);
+  const [lunchTimeStart, setLunchTimeStart] = useState(12);
+  const [lunchTimeEnd, setLunchTimeEnd] = useState(13);
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [street, setStreet] = useState('');
@@ -32,10 +37,10 @@ export default function BarberShop() {
         state: state,
         street: street,
         number: number,
-        openingTime: 9,
-        closingTime: 18,
-        lunchTimeStart: 12,
-        lunchTimeEnd: 13,
+        openingTime: openingTime,
+        closingTime: closingTime,
+        lunchTimeStart: lunchTimeStart,
+        lunchTimeEnd: lunchTimeEnd,
         cep: cep,
         neighborhood: neighborhood
       }
@@ -72,6 +77,66 @@ export default function BarberShop() {
               <div className={styles.input_container}>
                 <i className="fi fi-sr-barber-pole"></i>
                 <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+              </div>
+            </div>
+
+            <div className={styles.same_place}>
+              <div className={styles.input_body}>
+                <label>Horário de abertura</label>
+                <div className={styles.input_container}>
+                  <i class="fi fi-rr-time-forward"></i>
+                  <select value={openingTime} onChange={(e) => setOpeningTime(e.target.value)}>
+                    {(
+                      times.map( (time) => 
+                        <option key={'OpeningTime-'+time} value={time}>{time} : 00</option>
+                      )
+                    )}
+                  </select>
+                </div>
+              </div>
+
+              <div className={styles.input_body}>
+                <label>Hórario de Encerramento</label>
+                <div className={styles.input_container}>
+                  <i class="fi fi-rr-time-past"></i>
+                  <select value={closingTime} onChange={(e) => setClosingTime(e.target.value)}>
+                    {(
+                      times.map( (time) => 
+                        <option key={'ClosingTime-'+time} value={time}>{time} : 00</option>
+                      )
+                    )}
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.same_place}>
+              <div className={styles.input_body}>
+                <label>Início do almoço</label>
+                <div className={styles.input_container}>
+                  <i class="fi fi-tr-sandwich"></i>
+                  <select value={lunchTimeStart} onChange={(e) => setLunchTimeStart(e.target.value)}>
+                    {(
+                      lunchTimes.map( (lunchTime) => 
+                        <option key={'LunchTimeStart-'+lunchTime} value={lunchTime}>{lunchTime} : 00</option>
+                      )
+                    )}
+                  </select>
+                </div>
+              </div>
+
+              <div className={styles.input_body}>
+                <label>Fim do almoço</label>
+                <div className={styles.input_container}>
+                  <i class="fi fi-tr-sandwich"></i>
+                  <select value={lunchTimeEnd} onChange={(e) => setLunchTimeEnd(e.target.value)}>
+                    {(
+                      lunchTimes.map( (lunchTime) => 
+                        <option key={'LunchTimeEnd-'+lunchTime} value={lunchTime}>{lunchTime} : 00</option>
+                      )
+                    )}
+                  </select>
+                </div>
               </div>
             </div>
 
@@ -134,12 +199,29 @@ export default function BarberShop() {
             <button className={styles.btn_continue}>Register</button>
             <Link to={'/barber/login'}> Login </Link>
           </footer>
-
         </form>
 
       </div>
     </div>
   );
+
+  function setTimes(){
+    let times = [];
+    for(let time = 7; time <= 19;time++){
+      times.push(time);
+    }
+
+    return times;
+  }
+
+  function setLunchTimes(){
+    let lunchTimes = [];
+    for(let time = 11; time <= 15;time++){
+      lunchTimes.push(time);
+    }
+
+    return lunchTimes;
+  }
 
 }
 
