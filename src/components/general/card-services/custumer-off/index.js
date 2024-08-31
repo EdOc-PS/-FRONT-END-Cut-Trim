@@ -2,7 +2,9 @@
 import { Link } from 'react-router-dom';
 import styles from './costumerService.module.css'
 
-export default function CardService() {
+export default function CardService(props) {
+
+  
 
   return (
     <Link to={'scheduling'}>
@@ -10,12 +12,12 @@ export default function CardService() {
         <i className="fi fi-sr-hair-clipper"></i>
 
         <div className={styles.text_container}>
-          <h3>Teste</h3>
-          <p>1 hour</p>
+          <h3>{props.service.name}</h3>
+          <p>1 hora</p>
         </div>
 
         <div className={styles.price_container}>
-          <p>12,00</p>
+          <p>R$ {props.service.price}</p>
         </div>
 
       </div>

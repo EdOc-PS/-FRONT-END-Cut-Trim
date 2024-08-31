@@ -14,7 +14,7 @@ export default function Client() {
 
         <Route path='client'>
           <Route path='home' element={<Home/>}/>
-          <Route path='shop' element={<Shop/>}/>
+          <Route path='shop/:barberShop_id' element={<Shop/>}/>
           <Route path='scheduling' element={<Scheduling/>}/>
         </Route>
 
