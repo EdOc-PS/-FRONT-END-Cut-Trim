@@ -71,12 +71,23 @@ export default function BarberShop() {
           <HeaderAccount title={'Barbearia'} paragraph={'Insira as informações da barbearia'} />
         </div>
         <form className={styles.form_container} onSubmit={handleSubmit}>
+
           <div className={styles.input_field}>
-            <div className={styles.input_body}>
-              <label>Nome da Barbearia:</label>
-              <div className={styles.input_container}>
-                <i className="fi fi-sr-barber-pole"></i>
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            <div className={styles.same_place}>
+              <div className={styles.input_body}>
+                <label>Nome da Barbearia:</label>
+                <div className={styles.input_container}>
+                  <i className="fi fi-sr-barber-pole"></i>
+                  <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                </div>
+              </div>
+
+              <div className={styles.input_body}>
+                <label>Imagem:</label>
+                <div className={styles.input_container}>
+                  <i className="fi fi-sr-barber-pole"></i>
+                  <input type="image" />
+                </div>
               </div>
             </div>
 
@@ -196,7 +207,7 @@ export default function BarberShop() {
             </div>
           </div>
           <footer className={styles.footer}>
-            <button className={styles.btn_continue}>Register</button>
+            <button className={styles.btn_continue}>Registrar</button>
             <Link to={'/barber/login'}> Login </Link>
           </footer>
         </form>
