@@ -2,26 +2,10 @@
 
 import CardShop from '../../../general/card-shop';
 import styles from './fieldShop.module.css';
-import { useState, useEffect } from 'react';
-import { Get } from '../../../../core/service/get';
 
-export default function FieldShop() {
-  const [barberShops, setBarberShops] = useState([]);
+export default function FieldShop(props) {
+  const barberShops = props.barberShops;
 
-  useEffect(() => {
-    const getBarberShops = async () => {
-      Get('http://localhost:8080/cutandtrim/barbershop/find-all')
-        .then(jBody => {
-          console.log(jBody)
-          if (jBody.services !== null)
-            setBarberShops(jBody);
-          else
-          setBarberShops([]);
-        }).catch(error => { console.error('Error:', error); });
-    }
-
-    getBarberShops();
-  }, []);
   return (
 
     <section className={styles.fieldShop_body}>
@@ -30,7 +14,7 @@ export default function FieldShop() {
         {
           barberShops && barberShops.length > 0 ? (
             barberShops.map((barberShop) =>
-              <CardShop barberShop={{ id: barberShop.id, name: barberShop.name }}></CardShop>
+              <CardShop key={barberShop.id} barberShop={{ id: barberShop.id, name: barberShop.name }}></CardShop>
             )
           ) : (<p>Sem barbearias disponíveis!</p>)
         } 
