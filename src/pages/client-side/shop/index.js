@@ -14,7 +14,7 @@ export default function Shop() {
     return (
       <section className={styles.shop}>
           <HeaderBackLine title={'Serviços'} link={'../home'}/>
-          <Banner />
+          <Banner barberShop = {{ id: barberShop_id }}/>
           <FieldService barberShop = {{ id: barberShop_id }}/>
       </section>
     );

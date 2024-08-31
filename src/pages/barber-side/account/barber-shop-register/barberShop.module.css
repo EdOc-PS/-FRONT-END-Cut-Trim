@@ -72,7 +72,7 @@
     }
 }
 
-.input_container input {
+.input_container input, select {
     width: 100%;
     font-size: 16px;
     border: 0;
