@@ -13,19 +13,19 @@ export default function Banner(props) {
   const[closingTime, setClosingTime] = useState('');
 
   useEffect(() => {
-    const getBarberShops = async () => {
-      Get('http://localhost:8080/cutandtrim/barbershop/find/' + props.barberShop.id)
+    const getBarberShopInfo = async () => {
+      Get('http://localhost:8080/cutandtrim/barbershop/find?id=' + props.barberShop.id)
         .then(jBody => {
           if(jBody){
-            setBarberShopName(jbody.name);
-            setCity(jbody.city);
+            setBarberShopName(jBody.name);
+            setCity(jBody.city);
             setStreet(jBody.street);
             setNumber(jBody.number);
           }
         }).catch(error => { console.error('Error:', error); });
     }
 
-    getBarberShops();
+    getBarberShopInfo();
   }, []);
 
   return (

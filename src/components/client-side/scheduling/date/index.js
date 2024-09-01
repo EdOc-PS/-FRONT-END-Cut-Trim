@@ -4,7 +4,7 @@ import DayTime from '../time';
 import styles from './date.module.css'
 import React, { useState } from 'react';
 
-export default function Days() {
+export default function Days(props) {
 
   const [isExpanded, setIsExpanded] = useState(false);
   const [selectedDay, setSelectedDay] = useState(null);
@@ -16,9 +16,19 @@ export default function Days() {
     setSelectedDay(day);
   }
 
+  const lunchTimes = [];
   const schedules = [];
-  for (let time = 7; time < 19; time++) {
-      schedules.push(time);
+  if(props.time.lunchTimeEnd - props.time.lunchTimeStart == 1){
+    lunchTimes.push(props.time.lunchTimeStart);  
+  }else{
+    for(let lunchTime = props.time.lunchTimeStart; lunchTime <= props.time.lunchTimeEnd;lunchTime++){
+      lunchTimes.push(lunchTime);
+    }
+  }
+
+  for (let time = props.time.openingTime; time <= props.time.closingTime; time++) {
+      if(!lunchTimes.includes(time))
+        schedules.push(time);
   }
 
   const [showChooseTimes, setChooseTimes] = useState(Array(schedules.length).fill(false));

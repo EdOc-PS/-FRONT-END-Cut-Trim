@@ -30,7 +30,7 @@ export default function FieldService(props) {
           {
           services && services.length > 0 ? (
             services.map((service) =>
-              <CardService service={{ id: service.id, name: service.name, price: service.price.toFixed(2) }}></CardService>
+              <CardService service={{ barberShop_id: props.barberShop.id, id: service.id, name: service.name, price: service.price.toFixed(2) }}></CardService>
             )
           ) : (<p>A Loja está sem serviços!</p>)
         } 
