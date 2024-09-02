@@ -1,8 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
-
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { Post } from '../../../../core/service/post.js';
+import { Post, PostIMG } from '../../../../core/service/post.js';
 import { HeaderAccount } from '../../../../components/barber-side/header-account';
 import styles from './barberShop.module.css'
 
@@ -21,6 +20,7 @@ export default function BarberShop() {
   const [number, setNumber] = useState('');
   const [cep, setCep] = useState('');
   const [neighborhood, setNeighborhood] = useState('');
+  const [img, setImg] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,6 +31,7 @@ export default function BarberShop() {
         email: sessionStorage.getItem("barberEmail"),
         password: sessionStorage.getItem("barberPassword"),
       },
+
       barberShop: {
         name: name,
         city: city,
@@ -42,25 +43,45 @@ export default function BarberShop() {
         lunchTimeStart: lunchTimeStart,
         lunchTimeEnd: lunchTimeEnd,
         cep: cep,
-        neighborhood: neighborhood
-      }
+        neighborhood: neighborhood,
+
+      },
+
     }
 
+
+
     Post('http://localhost:8080/cutandtrim/owner/register', newBarberShop)
+
       .then(jBody => {
         if (jBody.barberShop.id) {
           localStorage.setItem('barberShopID', jBody.barberShop.id);
+
+          const formData = new FormData();
+          formData.append('image', img);
+
+          return PostIMG(`http://localhost:8080/cutandtrim/barbershop/upload-image?id=${jBody.barberShop.id}`, formData)
+        }
+
+      })
+
+      .then(jBody => {
+        if (jBody) {
           window.location.href = 'http://localhost:3000/barber/service/list';
         }
       })
+
       .catch(error => {
         console.error('Erro:', error);
       });
+
+
   }
+
 
   return (
     <div className={styles.registerShop_container}>
-      <img className={styles.img} src='/assets/images/register.svg' />
+      <img className={styles.img} src='/assets/images/barbershop.svg' />
 
       <div className={styles.header_outside}>
         <HeaderAccount title={'Barbearia'} paragraph={'Insira as informações da barbearia'} />
@@ -84,10 +105,10 @@ export default function BarberShop() {
 
               <div className={styles.input_body}>
                 <label>Imagem:</label>
-                <div className={styles.input_container}>
-                  <i className="fi fi-sr-barber-pole"></i>
-                  <input type="image" />
-                </div>
+                <label className={styles.label_files} htmlFor="input_file">
+                  <i className="fi fi-sr-resize"></i>
+                </label>
+                <input type="file" id='input_file' onChange={(event) => setImg(event.target.files[0])} />
               </div>
             </div>
 
@@ -95,11 +116,11 @@ export default function BarberShop() {
               <div className={styles.input_body}>
                 <label>Horário de abertura</label>
                 <div className={styles.input_container}>
-                  <i class="fi fi-rr-time-forward"></i>
+                  <i className="fi fi-rr-time-forward"></i>
                   <select value={openingTime} onChange={(e) => setOpeningTime(e.target.value)}>
                     {(
-                      times.map( (time) => 
-                        <option key={'OpeningTime-'+time} value={time}>{time} : 00</option>
+                      times.map((time) =>
+                        <option key={'OpeningTime-' + time} value={time}>{time} : 00</option>
                       )
                     )}
                   </select>
@@ -109,11 +130,11 @@ export default function BarberShop() {
               <div className={styles.input_body}>
                 <label>Hórario de Encerramento</label>
                 <div className={styles.input_container}>
-                  <i class="fi fi-rr-time-past"></i>
+                  <i className="fi fi-rr-time-past"></i>
                   <select value={closingTime} onChange={(e) => setClosingTime(e.target.value)}>
                     {(
-                      times.map( (time) => 
-                        <option key={'ClosingTime-'+time} value={time}>{time} : 00</option>
+                      times.map((time) =>
+                        <option key={'ClosingTime-' + time} value={time}>{time} : 00</option>
                       )
                     )}
                   </select>
@@ -125,11 +146,11 @@ export default function BarberShop() {
               <div className={styles.input_body}>
                 <label>Início do almoço</label>
                 <div className={styles.input_container}>
-                  <i class="fi fi-tr-sandwich"></i>
+                  <i className="fi fi-tr-sandwich"></i>
                   <select value={lunchTimeStart} onChange={(e) => setLunchTimeStart(e.target.value)}>
                     {(
-                      lunchTimes.map( (lunchTime) => 
-                        <option key={'LunchTimeStart-'+lunchTime} value={lunchTime}>{lunchTime} : 00</option>
+                      lunchTimes.map((lunchTime) =>
+                        <option key={'LunchTimeStart-' + lunchTime} value={lunchTime}>{lunchTime} : 00</option>
                       )
                     )}
                   </select>
@@ -139,11 +160,11 @@ export default function BarberShop() {
               <div className={styles.input_body}>
                 <label>Fim do almoço</label>
                 <div className={styles.input_container}>
-                  <i class="fi fi-tr-sandwich"></i>
+                  <i className="fi fi-tr-sandwich"></i>
                   <select value={lunchTimeEnd} onChange={(e) => setLunchTimeEnd(e.target.value)}>
                     {(
-                      lunchTimes.map( (lunchTime) => 
-                        <option key={'LunchTimeEnd-'+lunchTime} value={lunchTime}>{lunchTime} : 00</option>
+                      lunchTimes.map((lunchTime) =>
+                        <option key={'LunchTimeEnd-' + lunchTime} value={lunchTime}>{lunchTime} : 00</option>
                       )
                     )}
                   </select>
@@ -216,18 +237,18 @@ export default function BarberShop() {
     </div>
   );
 
-  function setTimes(){
+  function setTimes() {
     let times = [];
-    for(let time = 7; time <= 19;time++){
+    for (let time = 7; time <= 19; time++) {
       times.push(time);
     }
 
     return times;
   }
 
-  function setLunchTimes(){
+  function setLunchTimes() {
     let lunchTimes = [];
-    for(let time = 11; time <= 15;time++){
+    for (let time = 11; time <= 15; time++) {
       lunchTimes.push(time);
     }
 

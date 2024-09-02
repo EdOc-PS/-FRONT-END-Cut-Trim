@@ -2,7 +2,6 @@
 
 import FieldShop from '../../../components/client-side/home/fieldShop';
 import Header from '../../../components/structure/header';
-import styles_search from '../../../components/client-side/home/search/search.module.css';
 import { useState, useEffect } from 'react';
 import { Get } from '../../../core/service/get';
 
@@ -41,8 +40,8 @@ function Home() {
       <section className={styles.home}>
 
           <Header></Header>   
-          <section className={styles_search.search_container}>
-            <div className={styles_search.input_container}>
+          <section className={styles.search_container}>
+            <div className={styles.input_container}>
               <i className="fi fi-rr-search"></i>
               <input type="text" placeholder='Pesquisar' onInput={searchBarberShops}/>
             </div>

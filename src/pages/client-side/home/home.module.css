@@ -2,3 +2,46 @@
     height: 100dvh;
     background-color: #F6F6F6;
 }
+
+.search_container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding:  .8rem;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 5px 10px #EAEBEC;
+}
+
+.input_container {
+    border-radius: 15px;
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    background-color: var(--laranja);
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+        & input {
+            width: 100%;
+            font-size: 16px;
+            border: 0;
+            color: white;
+            background-color: transparent;
+        }
+
+        & i {
+            font-size: 20px;
+            color: white;
+        }
+}
+
+ input:focus-visible {
+    outline: none;
+}
+input::placeholder{
+    font-weight: 500;
+    color: #ffffff99;
+}

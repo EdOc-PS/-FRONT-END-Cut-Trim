@@ -83,6 +83,24 @@ input:focus-visible {
     outline: none;
 }
 
+input[type="file"] {
+    display: none;
+}
+
+.label_files{
+    background-color: var(--laranja);
+    display: flex;
+   justify-content: center;
+    padding: 16px;
+    width: 80px;
+    border-radius: 15px;
+    cursor: pointer;
+
+        i{
+            color:white;
+        }
+}
+
 
 .same_place {
     display: flex;
@@ -95,7 +113,7 @@ input:focus-visible {
 }
 .same_place:nth-child(1) {
     .input_body:first-child {
-        width: 80%;
+        width: 400%;
     }
 }
 .same_place:nth-child(2) {
