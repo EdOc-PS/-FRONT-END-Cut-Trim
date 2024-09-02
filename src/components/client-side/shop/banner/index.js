@@ -2,7 +2,7 @@
 
 import styles from './banner.module.css';
 import { useState, useEffect } from 'react';
-import { Get, GetImg } from '../../../../core/service/get';
+import { Get } from '../../../../core/service/get';
 
 export default function Banner(props) {
   const[barberShopName, setBarberShopName] = useState('Barbearia');
@@ -11,40 +11,27 @@ export default function Banner(props) {
   const[number, setNumber] = useState('123');
   const[openingTime, setOpeningTime] = useState('');
   const[closingTime, setClosingTime] = useState('');
-  const [file, setFile] = useState();
 
   useEffect(() => {
-    const getBarberShops = async () => {
-      Get('http://localhost:8080/cutandtrim/barbershop/find/' + props.barberShop.id)
+    const getBarberShopInfo = async () => {
+      Get('http://localhost:8080/cutandtrim/barbershop/find?id=' + props.barberShop.id)
         .then(jBody => {
           if(jBody){
-            setBarberShopName(jbody.name);
-            setCity(jbody.city);
+            setBarberShopName(jBody.name);
+            setCity(jBody.city);
             setStreet(jBody.street);
             setNumber(jBody.number);
           }
         }).catch(error => { console.error('Error:', error); });
     }
-    const getImg  = async () => {
-    GetImg(`http://localhost:8080/cutandtrim/barbershop/get-image?id=${props.barberShop.id}`)
-      .then(blob => {
-        if (blob) {
-          setFile(URL.createObjectURL(blob));
-        }
-      })
 
-      .catch(error => {
-        console.error('Error:', error);
-      });
-    } 
-    getImg();
-    getBarberShops();
+    getBarberShopInfo();
   }, []);
-  
+
   return (
 
     <section className={styles.banner_body}>
-      <img src={file} alt='' />
+      <img src='https://t4.ftcdn.net/jpg/02/10/97/19/360_F_210971959_wXcBYfif7jKeyKkHKhVyOnzQWHawIgK4.jpg' alt='' />
 
       <div className={styles.info_container}>
         <h1>{barberShopName}</h1>
