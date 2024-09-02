@@ -1,0 +1,29 @@
+.alert_container{
+    background-color: white;    
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+
+        .text_container{
+            font-size: 18px;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            gap: 5px;
+        }
+        img{
+            margin-top: 15px;
+            width: 300px;
+        }
+}
+
+@media only screen and (width < 926px) {
+    .alert_container{
+       display: none;
+    }
+}

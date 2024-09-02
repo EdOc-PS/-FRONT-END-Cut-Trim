@@ -15,14 +15,14 @@ export default function Wellcome() {
 
         <div className={styles.text_container}>
           <h1>CUT&TRIM</h1>
-          <h2>Everything you need is all in one place</h2>
+          <h2>Tudo o que você precisa está tudo em um só lugar.</h2>
           <p>
-            Introducing Cut&Trim: the app that lets you book barbershop appointments and browse styles—all in one place.
+            Apresentamos o Cut&Trim: o site que permite agendar consultas em barbearias e explorar estilos — tudo em um só lugar
           </p>
         </div>
 
         <div className={styles.buttons_container}>
-          <Link to={'/barber/singup'}><button className={styles.btn_account}>Create account</button></Link>
+          <Link to={'/barber/singup'}><button className={styles.btn_account}>Registrar</button></Link>
           <Link to={'/barber/login'}><button className={styles.btn_login_account}>Login</button></Link>
         </div>
       </div>

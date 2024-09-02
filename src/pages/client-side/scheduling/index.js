@@ -7,6 +7,7 @@ import styles from './scheduling.module.css';
 import { useState, useEffect } from 'react';
 import { Get } from '../../../core/service/get';
 import { useLocation } from 'react-router-dom';
+import Alert from '../../../components/structure/alert_screen';
 
 function Scheduling() {
   const location = useLocation();
@@ -35,6 +36,7 @@ function Scheduling() {
 
     return (
       <section className={styles.scheduling}>
+           <Alert/>
           <HeaderBack title={'Agendamento'} link={'../shop'}/>  
           <Days time={{ 
             openingTime: openingTime,

@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { Get } from '../../../core/service/get';
 
 import styles from './home.module.css'
+import Alert from '../../../components/structure/alert_screen';
 
 function Home() {
   const [barberShops, setBarberShops] = useState([]);
@@ -38,7 +39,7 @@ function Home() {
 
     return (
       <section className={styles.home}>
-
+          <Alert/>
           <Header></Header>   
           <section className={styles.search_container}>
             <div className={styles.input_container}>
