@@ -20,7 +20,9 @@ export default function BarberShop() {
   const [number, setNumber] = useState('');
   const [cep, setCep] = useState('');
   const [neighborhood, setNeighborhood] = useState('');
+
   const [img, setImg] = useState(null);
+  const [file, setFile] = useState();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -78,9 +80,14 @@ export default function BarberShop() {
 
   }
 
+  function handleImg(e) {
+    setImg(e.target.files[0]);
+    setFile(URL.createObjectURL(e.target.files[0]));
+  }
 
   return (
     <div className={styles.registerShop_container}>
+
       <img className={styles.img} src='/assets/images/barbershop.svg' />
 
       <div className={styles.header_outside}>
@@ -92,141 +99,153 @@ export default function BarberShop() {
           <HeaderAccount title={'Barbearia'} paragraph={'Insira as informações da barbearia'} />
         </div>
         <form className={styles.form_container} onSubmit={handleSubmit}>
-
           <div className={styles.input_field}>
-            <div className={styles.same_place}>
-              <div className={styles.input_body}>
-                <label>Nome da Barbearia:</label>
-                <div className={styles.input_container}>
-                  <i className="fi fi-sr-barber-pole"></i>
-                  <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            <div className={styles.info_container}>
+
+              <div className={styles.same_place}>
+                <div className={styles.input_body}>
+                  <label>Nome:</label>
+                  <div className={styles.input_container}>
+                    <i className="fi fi-sr-barber-pole"></i>
+                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                  </div>
+                </div>
+
+                <div className={styles.input_body}>
+                  <label>Imagem:</label>
+                  <label className={styles.label_files} htmlFor="input_file">
+                    <i className="fi fi-sr-resize"></i>
+                  </label>
+                  <input type="file" id='input_file' onChange={handleImg} />
                 </div>
               </div>
 
-              <div className={styles.input_body}>
-                <label>Imagem:</label>
-                <label className={styles.label_files} htmlFor="input_file">
-                  <i className="fi fi-sr-resize"></i>
-                </label>
-                <input type="file" id='input_file' onChange={(event) => setImg(event.target.files[0])} />
-              </div>
-            </div>
+              <img className={styles.background} src={file} alt='' />
 
-            <div className={styles.same_place}>
-              <div className={styles.input_body}>
-                <label>Horário de abertura</label>
-                <div className={styles.input_container}>
-                  <i className="fi fi-rr-time-forward"></i>
-                  <select value={openingTime} onChange={(e) => setOpeningTime(e.target.value)}>
-                    {(
-                      times.map((time) =>
-                        <option key={'OpeningTime-' + time} value={time}>{time} : 00</option>
-                      )
-                    )}
-                  </select>
+              <div className={styles.same_place}>
+                <div className={styles.input_body}>
+                  <label>Abertura: </label>
+                  <div className={styles.input_container}>
+                    <i className="fi fi-rr-time-forward"></i>
+                    <select value={openingTime} onChange={(e) => setOpeningTime(e.target.value)}>
+                      {(
+                        times.map((time) =>
+                          <option key={'OpeningTime-' + time} value={time}>{time} : 00</option>
+                        )
+                      )}
+                    </select>
+                  </div>
                 </div>
-              </div>
 
-              <div className={styles.input_body}>
-                <label>Hórario de Encerramento</label>
-                <div className={styles.input_container}>
-                  <i className="fi fi-rr-time-past"></i>
-                  <select value={closingTime} onChange={(e) => setClosingTime(e.target.value)}>
-                    {(
-                      times.map((time) =>
-                        <option key={'ClosingTime-' + time} value={time}>{time} : 00</option>
-                      )
-                    )}
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.same_place}>
-              <div className={styles.input_body}>
-                <label>Início do almoço</label>
-                <div className={styles.input_container}>
-                  <i className="fi fi-tr-sandwich"></i>
-                  <select value={lunchTimeStart} onChange={(e) => setLunchTimeStart(e.target.value)}>
-                    {(
-                      lunchTimes.map((lunchTime) =>
-                        <option key={'LunchTimeStart-' + lunchTime} value={lunchTime}>{lunchTime} : 00</option>
-                      )
-                    )}
-                  </select>
-                </div>
-              </div>
-
-              <div className={styles.input_body}>
-                <label>Fim do almoço</label>
-                <div className={styles.input_container}>
-                  <i className="fi fi-tr-sandwich"></i>
-                  <select value={lunchTimeEnd} onChange={(e) => setLunchTimeEnd(e.target.value)}>
-                    {(
-                      lunchTimes.map((lunchTime) =>
-                        <option key={'LunchTimeEnd-' + lunchTime} value={lunchTime}>{lunchTime} : 00</option>
-                      )
-                    )}
-                  </select>
+                <div className={styles.input_body}>
+                  <label>Encerramento: </label>
+                  <div className={styles.input_container}>
+                    <i className="fi fi-rr-time-past"></i>
+                    <select value={closingTime} onChange={(e) => setClosingTime(e.target.value)}>
+                      {(
+                        times.map((time) =>
+                          <option key={'ClosingTime-' + time} value={time}>{time} : 00</option>
+                        )
+                      )}
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className={styles.same_place}>
-              <div className={styles.input_body}>
-                <label>Cidade</label>
-                <div className={styles.input_container}>
-                  <i className="fi fi-sr-europe-flag"></i>
-                  <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
+
+            <div className={styles.city_container}>
+
+              <div className={styles.select_container}>
+                <label>Intervalo: </label>
+                <div className={styles.same_place}>
+                  <div className={styles.input_body}>
+                    <div className={styles.input_container}>
+                      <i className="fi fi-tr-sandwich"></i>
+                      <select value={lunchTimeStart} onChange={(e) => setLunchTimeStart(e.target.value)}>
+                        {(
+                          lunchTimes.map((lunchTime) =>
+                            <option key={'LunchTimeStart-' + lunchTime} value={lunchTime}>{lunchTime} : 00</option>
+                          )
+                        )}
+                      </select>
+                    </div>
+                  </div>
+                  <div className={styles.input_body}>
+                    <label></label>
+                    <div className={styles.input_container}>
+                      <i className="fi fi-tr-sandwich"></i>
+                      <select value={lunchTimeEnd} onChange={(e) => setLunchTimeEnd(e.target.value)}>
+                        {(
+                          lunchTimes.map((lunchTime) =>
+                            <option key={'LunchTimeEnd-' + lunchTime} value={lunchTime}>{lunchTime} : 00</option>
+                          )
+                        )}
+                      </select>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className={styles.input_body}>
-                <label>CEP:</label>
-                <div className={styles.input_container}>
-                  <i className="fi fi-sr-city"></i>
-                  <input type="text" value={cep} onChange={(e) => setCep(e.target.value)} />
-                </div>
-              </div>
-            </div>
 
-            <div className={styles.same_place}>
-              <div className={styles.input_body}>
-                <label>Bairro: </label>
-                <div className={styles.input_container}>
-                  <i className="fi fi-sr-house-chimney-blank"></i>
-                  <input type="text" value={neighborhood} onChange={(e) => setNeighborhood(e.target.value)} />
+              <div className={styles.same_place}>
+                <div className={styles.input_body}>
+                  <label>Cidade: </label>
+                  <div className={styles.input_container}>
+                    <i className="fi fi-sr-europe-flag"></i>
+                    <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
+                  </div>
                 </div>
-              </div>
-              <div className={styles.input_body}>
-                <label>Estado:</label>
-                <div className={styles.input_container}>
-                  <i className="fi fi-sr-europe-flag"></i>
-                  <input type="text" value={state} onChange={(e) => setState(e.target.value)} />
+
+                <div className={styles.input_body}>
+                  <label>CEP:</label>
+                  <div className={styles.input_container}>
+                    <i className="fi fi-sr-city"></i>
+                    <input type="text" value={cep} onChange={(e) => setCep(e.target.value)} />
+                  </div>
                 </div>
               </div>
 
-            </div>
-
-            <div className={styles.same_place}>
-              <div className={styles.input_body}>
-                <label>Rua:</label>
-                <div className={styles.input_container}>
-                  <i className="fi fi-sr-city"></i>
-                  <input type="text" value={street} onChange={(e) => setStreet(e.target.value)} />
+              <div className={styles.same_place}>
+                <div className={styles.input_body}>
+                  <label>Bairro: </label>
+                  <div className={styles.input_container}>
+                    <i className="fi fi-sr-house-chimney-blank"></i>
+                    <input type="text" value={neighborhood} onChange={(e) => setNeighborhood(e.target.value)} />
+                  </div>
                 </div>
+                <div className={styles.input_body}>
+                  <label>Estado:</label>
+                  <div className={styles.input_container}>
+                    <i className="fi fi-sr-europe-flag"></i>
+                    <input type="text" value={state} onChange={(e) => setState(e.target.value)} />
+                  </div>
+                </div>
+
               </div>
 
-              <div className={styles.input_body}>
-                <label>Numero:</label>
-                <div className={styles.input_container}>
-                  <i className="fi fi-sr-house-chimney-blank"></i>
-                  <input type="text" value={number} onChange={(e) => setNumber(e.target.value)} />
+              <div className={styles.same_place}>
+                <div className={styles.input_body}>
+                  <label>Rua:</label>
+                  <div className={styles.input_container}>
+                    <i className="fi fi-sr-city"></i>
+                    <input type="text" value={street} onChange={(e) => setStreet(e.target.value)} />
+                  </div>
                 </div>
+
+                <div className={styles.input_body}>
+                  <label>Numero:</label>
+                  <div className={styles.input_container}>
+                    <i className="fi fi-sr-house-chimney-blank"></i>
+                    <input type="text" value={number} onChange={(e) => setNumber(e.target.value)} />
+                  </div>
+                </div>
+
               </div>
 
             </div>
           </div>
+
           <footer className={styles.footer}>
             <button className={styles.btn_continue}>Registrar</button>
             <Link to={'/barber/login'}> Login </Link>
