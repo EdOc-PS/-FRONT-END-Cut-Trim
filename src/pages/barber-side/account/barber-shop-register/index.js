@@ -121,33 +121,34 @@ export default function BarberShop() {
               </div>
 
               <img className={styles.background} src={file} alt='' />
+              <div className={styles.select_container}>
+                <label>Abertura: </label>
+                <div className={styles.same_place}>
+                  <div className={styles.input_body}>
 
-              <div className={styles.same_place}>
-                <div className={styles.input_body}>
-                  <label>Abertura: </label>
-                  <div className={styles.input_container}>
-                    <i className="fi fi-rr-time-forward"></i>
-                    <select value={openingTime} onChange={(e) => setOpeningTime(e.target.value)}>
-                      {(
-                        times.map((time) =>
-                          <option key={'OpeningTime-' + time} value={time}>{time} : 00</option>
-                        )
-                      )}
-                    </select>
+                    <div className={styles.input_container}>
+                      <i className="fi fi-rr-time-forward"></i>
+                      <select value={openingTime} onChange={(e) => setOpeningTime(e.target.value)}>
+                        {(
+                          times.map((time) =>
+                            <option key={'OpeningTime-' + time} value={time}>{time} : 00</option>
+                          )
+                        )}
+                      </select>
+                    </div>
                   </div>
-                </div>
 
-                <div className={styles.input_body}>
-                  <label>Encerramento: </label>
-                  <div className={styles.input_container}>
-                    <i className="fi fi-rr-time-past"></i>
-                    <select value={closingTime} onChange={(e) => setClosingTime(e.target.value)}>
-                      {(
-                        times.map((time) =>
-                          <option key={'ClosingTime-' + time} value={time}>{time} : 00</option>
-                        )
-                      )}
-                    </select>
+                  <div className={styles.input_body}>
+                    <div className={styles.input_container}>
+                      <i className="fi fi-rr-time-past"></i>
+                      <select value={closingTime} onChange={(e) => setClosingTime(e.target.value)}>
+                        {(
+                          times.map((time) =>
+                            <option key={'ClosingTime-' + time} value={time}>{time} : 00</option>
+                          )
+                        )}
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -161,7 +162,7 @@ export default function BarberShop() {
                 <div className={styles.same_place}>
                   <div className={styles.input_body}>
                     <div className={styles.input_container}>
-                      <i className="fi fi-tr-sandwich"></i>
+                    <i className="fi fi-rr-time-forward"></i>
                       <select value={lunchTimeStart} onChange={(e) => setLunchTimeStart(e.target.value)}>
                         {(
                           lunchTimes.map((lunchTime) =>
@@ -172,9 +173,9 @@ export default function BarberShop() {
                     </div>
                   </div>
                   <div className={styles.input_body}>
-                    <label></label>
+
                     <div className={styles.input_container}>
-                      <i className="fi fi-tr-sandwich"></i>
+                    <i className="fi fi-rr-time-past"></i>
                       <select value={lunchTimeEnd} onChange={(e) => setLunchTimeEnd(e.target.value)}>
                         {(
                           lunchTimes.map((lunchTime) =>
@@ -192,7 +193,7 @@ export default function BarberShop() {
                 <div className={styles.input_body}>
                   <label>Cidade: </label>
                   <div className={styles.input_container}>
-                    <i className="fi fi-sr-europe-flag"></i>
+                    <i className="fi fi-sr-building"></i>
                     <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
                   </div>
                 </div>
@@ -200,7 +201,7 @@ export default function BarberShop() {
                 <div className={styles.input_body}>
                   <label>CEP:</label>
                   <div className={styles.input_container}>
-                    <i className="fi fi-sr-city"></i>
+                  <i className="fi fi-sr-mailbox-envelope"></i>
                     <input type="text" value={cep} onChange={(e) => setCep(e.target.value)} />
                   </div>
                 </div>
@@ -228,7 +229,7 @@ export default function BarberShop() {
                 <div className={styles.input_body}>
                   <label>Rua:</label>
                   <div className={styles.input_container}>
-                    <i className="fi fi-sr-city"></i>
+                  <i className="fi fi-sr-road"></i>
                     <input type="text" value={street} onChange={(e) => setStreet(e.target.value)} />
                   </div>
                 </div>
@@ -236,7 +237,7 @@ export default function BarberShop() {
                 <div className={styles.input_body}>
                   <label>Numero:</label>
                   <div className={styles.input_container}>
-                    <i className="fi fi-sr-house-chimney-blank"></i>
+                  <i className="fi fi-sr-circle-1"></i>
                     <input type="text" value={number} onChange={(e) => setNumber(e.target.value)} />
                   </div>
                 </div>
