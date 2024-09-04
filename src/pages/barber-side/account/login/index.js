@@ -24,7 +24,7 @@ export default function Login() {
         console.log(jBody.id)
         if (jBody.id) {
           localStorage.setItem('barberShopID', jBody.id);
-          window.location.href = 'http://localhost:3000/barber/service/list';
+          window.location.href = 'http://localhost:3000/barber/service';
         }
       }).catch(error => {
         console.error('Erro:', error);

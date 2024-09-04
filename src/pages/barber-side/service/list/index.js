@@ -28,9 +28,9 @@ export default function ListServices() {
   return (
     <section className={styles.listServices_body}>
 
-      <div className={styles.header_container}>
+
         <HeaderService title='Seus Serviços' paragraph="Encontre aqui todos os seus serviços disponiveis"/>
-      </div>
+
 
       <div className={styles.listServices_container}>
         {

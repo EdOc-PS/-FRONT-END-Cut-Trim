@@ -24,7 +24,7 @@ export default function CreateService() {
     }
 
     Post('http://localhost:8080/cutandtrim/barbershop/add-service', service)
-      .then(() => window.location.href = 'http://localhost:3000/barber/service/list')
+      .then(() => window.location.href = 'http://localhost:3000/barber/list')
       .catch(error => { console.log(error) })
   }
 

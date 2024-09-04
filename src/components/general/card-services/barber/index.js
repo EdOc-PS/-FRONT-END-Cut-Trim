@@ -13,7 +13,7 @@ export default function CardService(props) {
         </div>
         <div className={styles.action_buttons}>
           <button className={styles.btn} onClick={() => deleteService(props.service.id)}>Deletar</button>
-          <Link to={'../../../../barber/service/update/'+ props.service.id}>
+          <Link to={'../../../../barber/update/'+ props.service.id}>
               <button className={styles.btn}>Editar</button>
           </Link>
         </div>
